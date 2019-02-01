@@ -1,0 +1,97 @@
+.hero {
+  grid-area: hero;
+}
+.sideHero {
+  grid-area: sidehero;
+}
+.firstList {
+  grid-area: firstList;
+}
+.secondList {
+  grid-area: secondList;
+}
+.thirdList {
+  grid-area: thirdList;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: row;    
+}
+
+@media only screen and (min-width: 0) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "hero hero"
+      "sidehero sidehero"
+      "firstList firstList"
+      "secondList secondList"
+      "thirdList thirdList";
+  }
+  .firstList {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .secondList {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .thirdList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .firstList {
+    display: contents;
+    grid-area: none;
+  }
+  .firstList div:first-child {
+    grid-area: firstList-first-el;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "hero hero"
+      "sidehero firstList-first-el"
+      "firstList-el firstList-el"
+      "secondList secondList"
+      "thirdList thirdList";
+  }
+
+  .secondList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .thirdList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .firstList {
+    display: flex;
+    grid-area: firstList;
+  }
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "hero sidehero"
+      "firstList firstList"
+      "secondList secondList"
+      "thirdList thirdList";
+  }
+  .secondList {
+    display: flex;
+  }
+  .thirdList {
+    display: flex;
+  }
+}
+

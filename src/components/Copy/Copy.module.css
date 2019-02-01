@@ -1,0 +1,12 @@
+
+.title {
+  font-size: 18px;
+  text-align: left;
+}
+
+.content {
+  font-size: 12px;
+  text-align: left;
+  max-height: 45px;
+  overflow: hidden;
+}
